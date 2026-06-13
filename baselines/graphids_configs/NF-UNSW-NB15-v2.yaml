@@ -1,0 +1,42 @@
+data_type:
+  value: benign
+dataset:
+  value: NF-UNSW-NB15-v2
+num_epochs:
+  value: 100
+learning_rate:
+  value: 1.1e-5
+weight_decay:
+  value: 0.6
+ae_weight_decay:
+  value: 0.04573136485742748
+edim_out:
+  value: 72
+batch_size:
+  value: 32768
+fanout:
+  value: 32768
+agg_type:
+  value: mean
+num_layers:
+  value: 1
+mask_ratio:
+  value: 0.15
+patience:
+  value: 20
+ae_batch_size:
+  value: 64
+window_size:
+  value: 512
+step_percent:
+  value: 1
+ae_embedding_dim:
+  value: 48
+ae_dropout:
+  value: 0
+dropout:
+  value: 0.75
+positional_encoding:
+  value: None
+fraction:
+  value: null

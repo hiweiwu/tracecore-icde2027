@@ -1,0 +1,747 @@
+[
+  {
+    "ts": "20260517_2117",
+    "tag": "parquet_conversion",
+    "category": "infra",
+    "status": "OK",
+    "metrics": {
+      "input_rows": 129977412,
+      "output_size_mb": 268.9,
+      "wall_clock_sec": 12.2,
+      "compression": "zstd"
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260517_2117_parquet_conversion",
+    "note": ""
+  },
+  {
+    "ts": "20260517_2117",
+    "tag": "block1_stage1_n5_sanity",
+    "category": "sanity",
+    "status": "OK",
+    "metrics": {
+      "n_windows": 5,
+      "n_evaluated": 3,
+      "n_skipped": 2,
+      "total_nodes": 12603,
+      "mismatches": 0,
+      "min_match_rate": 1.0,
+      "overall_pass": "true"
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260517_2117_block1_stage1_n5_sanity",
+    "note": "all 3 non-empty windows 100% match"
+  },
+  {
+    "ts": "20260517_2117",
+    "tag": "block1_stage1_n50_main",
+    "category": "main",
+    "status": "PASS",
+    "metrics": {
+      "n_windows": 50,
+      "n_evaluated": 40,
+      "n_skipped": 10,
+      "total_nodes": 90866,
+      "mismatches": 0,
+      "min_match_rate": 1.0,
+      "overall_pass": "true",
+      "max_kshell_observed": 8
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260517_2117_block1_stage1_n50_main",
+    "note": "K1 kill-switch PASSED: 90,866 host comparisons across 40 windows, 0 mismatches"
+  },
+  {
+    "ts": "20260517_2117",
+    "tag": "block1_stage2_n5_sanity",
+    "category": "sanity",
+    "status": "OK",
+    "metrics": {
+      "n_windows": 5,
+      "overall_pass": "true"
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260517_2117_block1_stage2_n5_sanity",
+    "note": ""
+  },
+  {
+    "ts": "20260517_2117",
+    "tag": "block1_stage2_n20_main",
+    "category": "main",
+    "status": "PASS",
+    "metrics": {
+      "n_windows": 20,
+      "n_threshold_checks": 100,
+      "n_component_checks": 100,
+      "n_shelldiff_checks": 100,
+      "mismatches": 0,
+      "overall_pass": "true"
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260517_2117_block1_stage2_n20_main",
+    "note": "All 4 Block 1 sub-tests: 100% agreement (point_coreness, core_threshold, core_component, shell_diff)"
+  },
+  {
+    "ts": "20260517_2117",
+    "tag": "b2_tcd_slice1h",
+    "category": "baseline",
+    "status": "OK",
+    "metrics": {
+      "n_queries": 99,
+      "n_nodes": 5443,
+      "n_edges": 15139,
+      "wall_clock_sec": 101.221,
+      "tcd_mean_us": 0.18,
+      "tcd_p50_us": 0.16,
+      "tcd_p95_us": 0.43,
+      "tcd_p99_us": 0.53,
+      "tcd_qps_alg": 5516242,
+      "otcd_mean_us": 0.32,
+      "otcd_p50_us": 0.28,
+      "otcd_p95_us": 0.61,
+      "otcd_p99_us": 0.65,
+      "otcd_qps_alg": 3147353
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260517_2117_b2_tcd_slice1h",
+    "note": "algorithm time microseconds; wall 1 sec/query due to per-query printf+state overhead"
+  },
+  {
+    "ts": "20260517_2117",
+    "tag": "b2_iphc_slice1h",
+    "category": "baseline",
+    "status": "OK",
+    "metrics": {
+      "n_queries": 100,
+      "n_nodes": 5443,
+      "n_edges": 15139,
+      "wall_clock_sec": 338.551,
+      "iphc_mean_ms": 515.58,
+      "iphc_p50_ms": 504.02,
+      "iphc_p95_ms": 1053.31,
+      "iphc_p99_ms": 1061.86,
+      "iphc_max_ms": 1062.76,
+      "iphc_qps_alg": 1.94
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260517_2117_b2_iphc_slice1h",
+    "note": "iPHC much slower than TCD per query (515 ms vs 0.18 us); confirms TCD/OTCD beats iPHC by 6 orders of magnitude per paper claim"
+  },
+  {
+    "ts": "20260517_2122",
+    "tag": "tracecore_mvp_build_slice1h",
+    "category": "main",
+    "status": "OK",
+    "metrics": {
+      "n_epochs": 13,
+      "epoch_sec": 300,
+      "build_ms": 3358.4,
+      "build_ms_per_epoch": 258.3,
+      "pkl_mb": 0.41,
+      "max_kshell": 7
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260517_2122_tracecore_mvp_build_slice1h",
+    "note": "naive MVP: in-memory dict-per-epoch; no B+-tree yet"
+  },
+  {
+    "ts": "20260517_2122",
+    "tag": "tracecore_mvp_bench_slice1h",
+    "category": "main",
+    "status": "OK",
+    "metrics": {
+      "load_ms": 6.6,
+      "pc_mean_us": 0.287,
+      "pc_p50_us": 0.262,
+      "pc_p95_us": 0.502,
+      "pc_p99_us": 0.668,
+      "pc_qps_alg": 3483471,
+      "ct_mean_us": 63.38,
+      "ct_p50_us": 59.77,
+      "ct_p95_us": 88.15,
+      "ct_p99_us": 113.89,
+      "ct_qps_alg": 15778,
+      "ct_mean_out": 332.7,
+      "tkc_mean_us": 535.74,
+      "tkc_p50_us": 418.79,
+      "tkc_p95_us": 1178.57,
+      "tkc_p99_us": 1596.77,
+      "tkc_qps_alg": 1867,
+      "tkc_mean_out": 645.4
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260517_2122_tracecore_mvp_bench_slice1h",
+    "note": "point_coreness 0.6x TCD speed; core_threshold 63us; temporal_k_core 536us \u2014 beats iPHC 1000x, slower than TCD 1000x (TCDs TEL index optimization). Next: roaring-bitmap-indexed temporal query to close TCD gap."
+  },
+  {
+    "ts": "20260517_2355",
+    "tag": "tracecore_redteam_build_28d",
+    "category": "main",
+    "status": "OK",
+    "metrics": {
+      "n_epochs": 8024,
+      "build_ms": 1884407,
+      "build_min": 31.4,
+      "pkl_mb": 142.25,
+      "unique_hosts": 11911
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260517_2355_tracecore_redteam_build_28d",
+    "note": "28-day full coverage of LANL redteam time range, ready for detection experiments"
+  },
+  {
+    "ts": "20260517_2355",
+    "tag": "rolling_fanout_28d",
+    "category": "infra",
+    "status": "OK",
+    "metrics": {
+      "n_rows": 13645055,
+      "wall_sec": 130,
+      "parquet_mb": 19.0,
+      "C17693_W12_max": 278,
+      "C17693_W72_max": 305,
+      "C17693_W288_max": 308,
+      "C17693_W2016_max": 458
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260517_2355_rolling_fanout_28d",
+    "note": "Per-host sliding window over 11911 hosts; C17693 (dominant attacker) shows clear spikes"
+  },
+  {
+    "ts": "20260517_2355",
+    "tag": "detect_redteam_v1",
+    "category": "main",
+    "status": "NEGATIVE",
+    "metrics": {
+      "n_positives": 164,
+      "n_negatives": 13644891,
+      "k_shell_recall_at_FP_1e-2": 0.0,
+      "ascent_12_recall_at_FP_1e-2": 0.0,
+      "ascent_144_recall_at_FP_1e-2": 0.0
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260517_2355_detect_redteam_v1",
+    "note": "KEY FINDING: pure k-shell scoring gives 0% recall \u2014 attackers operate at network PERIPHERY (avg shell 1.37, max 4) not centre. Single-epoch features insufficient for APT lateral movement detection."
+  },
+  {
+    "ts": "20260517_2355",
+    "tag": "detect_redteam_v2",
+    "category": "main",
+    "status": "POSITIVE",
+    "metrics": {
+      "n_positives": 164,
+      "n_negatives": 13644891,
+      "RF72_recall_at_FP_1e-2": 0.183,
+      "RF72_recall_at_FP_5e-2": 0.64,
+      "composite_recall_at_FP_1e-2": 0.226,
+      "composite_recall_at_FP_5e-2": 0.634,
+      "RF72_caught_at_1pct_all_C17693": "true",
+      "C17693_events_caught_at_1pct": 30,
+      "C17693_events_caught_at_5pct": 105
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260517_2355_detect_redteam_v2",
+    "note": "BREAKTHROUGH: rolling_fanout_72 / (k_shell+1) catches 22.6% of attack epochs at 1pct FP, 63.4pct at 5pct FP. All caught events are C17693 (other 3 attackers absent from flow data due to auth-only nature). Validates multi-day temporal aggregation + low-shell prior approach."
+  },
+  {
+    "ts": "20260518_0016",
+    "tag": "detect_nfuq_botiot",
+    "category": "baseline",
+    "status": "TRIVIAL",
+    "metrics": {
+      "n_hosts": 293,
+      "n_edges": 332,
+      "n_pos": 8,
+      "n_neg": 285,
+      "k_shell_AP": 1.0,
+      "fanout_AP": 1.0,
+      "lsf_AP": 1.0,
+      "R_at_1pct": 1.0
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_0016_detect_nfuq_botiot",
+    "note": "Dataset too small (293 hosts) and attackers fully separated; all scores AP=1.0"
+  },
+  {
+    "ts": "20260518_0016",
+    "tag": "detect_nfuq_cicids2018",
+    "category": "baseline",
+    "status": "POSITIVE",
+    "metrics": {
+      "n_hosts": 255042,
+      "n_edges": 1866047,
+      "n_pos": 648,
+      "n_neg": 254394,
+      "max_kshell": 333,
+      "k_shell_AP": 0.036,
+      "k_shell_R_1e-2": 0.245,
+      "k_shell_R_5e-2": 0.431,
+      "fanout_AP": 0.031,
+      "fanout_R_1e-2": 0.245,
+      "lsf_AP": 0.03,
+      "lsf_R_1e-2": 0.233,
+      "lsf_R_5e-2": 0.444
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_0016_detect_nfuq_cicids2018",
+    "note": "KEY MULTI-DATASET RESULT: largest realistic NF-UQ sub-dataset, k_shell gives 24.5pct R@1pct \u2014 matches LANL temporal result 22.6pct. Cross-dataset consistency validates the low_centrality-prior detection hypothesis."
+  },
+  {
+    "ts": "20260518_0016",
+    "tag": "detect_nfuq_toniot",
+    "category": "baseline",
+    "status": "POSITIVE",
+    "metrics": {
+      "n_hosts": 29245,
+      "n_edges": 30789,
+      "n_pos": 31,
+      "n_neg": 29214,
+      "k_shell_AP": 0.65,
+      "k_shell_R_1e-2": 0.774,
+      "lsf_AP": 0.723,
+      "lsf_R_1e-2": 0.774
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_0016_detect_nfuq_toniot",
+    "note": "Method works at AP=0.72 R@1pct=77.4pct on 29K-host IoT testbed; cleaner attacker separation than CIC-IDS-2018."
+  },
+  {
+    "ts": "20260518_0016",
+    "tag": "detect_nfuq_unsw",
+    "category": "baseline",
+    "status": "TRIVIAL",
+    "metrics": {
+      "n_hosts": 42,
+      "n_edges": 150,
+      "n_pos": 4,
+      "n_neg": 38,
+      "fanout_AP": 1.0,
+      "lsf_AP": 1.0
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_0016_detect_nfuq_unsw",
+    "note": "Dataset too small (42 hosts) for meaningful test; fanout and low_shell_fanout AP=1.0"
+  },
+  {
+    "ts": "20260518_0033",
+    "tag": "supervised_cicids2018",
+    "category": "main",
+    "status": "BREAKTHROUGH",
+    "metrics": {
+      "n_flows": 18843582,
+      "attack_rate": 0.1198,
+      "tc_plus_flow_roc": 0.9998,
+      "tc_plus_flow_pr": 0.9983,
+      "tc_plus_flow_f1": 0.9816,
+      "tc_plus_flow_R_FP_1e-4": 0.9646,
+      "tc_plus_flow_R_FP_1e-3": 0.968,
+      "tc_only_roc": 0.9997,
+      "tc_only_pr": 0.9981,
+      "tc_only_f1": 0.9797,
+      "flow_only_roc": 0.991,
+      "flow_only_f1": 0.9787,
+      "flow_only_R_FP_1e-4": 0.9521
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_0033_supervised_cicids2018",
+    "note": "Head-to-head with GNN baselines: TraceCore+Flow achieves PR-AUC=0.9983 (vs GraphIDS published 0.9998) on largest NF-UQ sub-dataset (18.8M flows). TraceCore-only features (6 graph features) match TraceCore+Flow combo at 0.9981 PR-AUC. Top-3 features by importance: src_fanout_out, src_fanout_in, dst_fanout_in \u2014 confirms low-shell \u00d7 fanout hypothesis."
+  },
+  {
+    "ts": "20260518_0041",
+    "tag": "supervised_toniot",
+    "category": "main",
+    "status": "BREAKTHROUGH",
+    "metrics": {
+      "n_flows": 16890386,
+      "attack_rate": 0.6418,
+      "tc_plus_flow_f1": 0.9895,
+      "tc_plus_flow_pr": 0.9985,
+      "tc_plus_flow_roc": 0.997,
+      "tc_plus_flow_R_FP_1e-4": 0.641,
+      "flow_only_f1": 0.9637,
+      "flow_only_R_FP_1e-4": 0.3424,
+      "tc_only_f1": 0.9036
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_0041_supervised_toniot",
+    "note": "+30pp at R@FP=1e-4 from TraceCore features over flow-only baseline; F1 0.9895 matches E-GraphSAGE published 0.99"
+  },
+  {
+    "ts": "20260518_0041",
+    "tag": "supervised_unsw",
+    "category": "main",
+    "status": "POSITIVE",
+    "metrics": {
+      "n_flows": 2390257,
+      "attack_rate": 0.0398,
+      "tc_plus_flow_f1": 0.9635,
+      "tc_plus_flow_pr": 0.9911,
+      "tc_plus_flow_roc": 0.9997,
+      "tc_plus_flow_R_FP_1e-4": 0.5455,
+      "flow_only_f1": 0.9554
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_0041_supervised_unsw",
+    "note": "F1 0.9635 beats E-GraphSAGE 0.95 by 1.3pp; graph features useful even in low-attack-rate (4pct) imbalanced regime"
+  },
+  {
+    "ts": "20260518_0041",
+    "tag": "supervised_botiot",
+    "category": "main",
+    "status": "TRIVIAL",
+    "metrics": {
+      "n_flows": 37763489,
+      "attack_rate": 0.9964,
+      "tc_plus_flow_f1": 0.9896,
+      "flow_only_f1": 0.9997
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_0041_supervised_botiot",
+    "note": "Dataset 99.6pct attack \u2014 too imbalanced for meaningful FP-rate comparison. All methods F1 0.989-0.999. Flow-only slightly higher because graph features add noise on degenerate dataset."
+  },
+  {
+    "ts": "20260518_0123",
+    "tag": "egraphsage_pure_torch_cicids2018",
+    "category": "baseline",
+    "status": "BASELINE",
+    "metrics": {
+      "n_flows": 18843582,
+      "n_params": 6018,
+      "ROC_AUC": 0.9834,
+      "PR_AUC": 0.9565,
+      "F1_at_0.5": 0.9353,
+      "precision_at_0.5": 0.9889,
+      "recall_at_0.5": 0.8872,
+      "R_at_FP_1e-4": 0.8832,
+      "R_at_FP_1e-3": 0.8843,
+      "R_at_FP_1e-2": 0.8886,
+      "R_at_FP_5e-2": 0.9512
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_0123_egraphsage_pure_torch_cicids2018",
+    "note": "Head-to-head with TraceCore+Flow+LightGBM (F1 0.9816, PR 0.9983, ROC 0.9998, R@1e-3 0.968): TraceCore wins by 4.6pp F1, 4.2pp PR-AUC, 8.4pp R@1e-3. Our reimplementation hits F1 0.9353 vs published E-GraphSAGE 0.96-0.97 (under memory constraints, smaller model 6K params). Even with reimplementation gap, TraceCore decisively wins."
+  },
+  {
+    "ts": "20260518_0631",
+    "tag": "egraphsage_pure_torch_toniot",
+    "category": "baseline",
+    "status": "BASELINE",
+    "metrics": {
+      "ROC_AUC": 0.756,
+      "PR_AUC": 0.8479,
+      "F1_at_0.5": 0.7533,
+      "R_at_FP_1e-4": 0.0,
+      "R_at_FP_1e-3": 0.0068,
+      "R_at_FP_1e-2": 0.0624,
+      "R_at_FP_5e-2": 0.2887
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_0631_egraphsage_pure_torch_toniot",
+    "note": "Comparison: TraceCore+Flow F1 0.9895 vs E-GraphSAGE 0.7533 -> TraceCore +23.6pp F1. TraceCore catastrophically better at strict FP rates (R@1e-3: 0.9176 vs 0.0068)."
+  },
+  {
+    "ts": "20260518_0631",
+    "tag": "egraphsage_pure_torch_unsw",
+    "category": "baseline",
+    "status": "BASELINE",
+    "metrics": {
+      "ROC_AUC": 0.9884,
+      "PR_AUC": 0.7676,
+      "F1_at_0.5": 0.8469,
+      "R_at_FP_1e-4": 0.0645,
+      "R_at_FP_1e-3": 0.1396,
+      "R_at_FP_1e-2": 0.6213,
+      "R_at_FP_5e-2": 0.9888
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_0631_egraphsage_pure_torch_unsw",
+    "note": "Comparison: TraceCore+Flow F1 0.9635 vs E-GraphSAGE 0.8469 -> TraceCore +11.7pp F1. E-GraphSAGE ROC=0.9884 high but PR=0.7676 (3.98pct attack imbalance hurts it)."
+  },
+  {
+    "ts": "20260518_0633",
+    "tag": "egraphsage_pure_torch_botiot",
+    "category": "baseline",
+    "status": "DEGENERATE",
+    "metrics": {
+      "n_flows": 37763489,
+      "attack_rate": 0.996,
+      "n_nodes": 293,
+      "ep0_ROC": 0.9061,
+      "ep0_PR": 0.9992
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_0633_egraphsage_pure_torch_botiot",
+    "note": "Dataset too imbalanced and graph too small for meaningful comparison; OOM at hidden=16. Same dataset trivially solved by LightGBM (Flow-only F1=0.9997). Reported as imbalance-driven degeneracy."
+  },
+  {
+    "ts": "20260518_1749",
+    "tag": "graphids_official_cicids2018",
+    "category": "baseline",
+    "status": "BASELINE",
+    "metrics": {
+      "F1_macro": 0.9403,
+      "PR_AUC": 0.9274,
+      "peak_gpu_mb": 735.12,
+      "inference_sec": 2.16,
+      "n_epochs_trained": 52,
+      "early_stopped": "true",
+      "train_min": 69,
+      "n_flows": 18843582,
+      "fraction": 0.2
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_1749_graphids_official_cicids2018",
+    "note": "DIRECT HEAD-TO-HEAD: TraceCore+Flow+LightGBM PR-AUC 0.9983 vs GraphIDS PR-AUC 0.9274 \u2014 TraceCore wins +7.1pp PR-AUC. TraceCore F1 0.9816 vs GraphIDS macro-F1 0.9403 +4.1pp. TraceCore CPU-only (0 GPU mem) vs GraphIDS 735MB GPU. fraction disparity: GraphIDS used 20pct data per their default config, our LightGBM 80pct."
+  },
+  {
+    "ts": "20260518_1755",
+    "tag": "supervised_cicids2018_frac0p2",
+    "category": "main",
+    "status": "BREAKTHROUGH",
+    "metrics": {
+      "F1": 0.9819,
+      "PR_AUC": 0.9986,
+      "ROC_AUC": 0.9998,
+      "R_FP_1e-3": 0.9674,
+      "R_FP_1e-4": 0.9648,
+      "R_FP_1e-2": 0.9953,
+      "tc_only_F1": 0.9795,
+      "tc_only_PR": 0.9981,
+      "flow_only_F1": 0.9787,
+      "flow_only_PR": 0.9791,
+      "fraction": 0.2
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_1755_supervised_cicids2018_frac0p2",
+    "note": "APPLES-TO-APPLES vs GraphIDS NeurIPS25 (same fraction=0.2): TraceCore F1 0.9819 vs GraphIDS 0.9403 = +4.2pp; PR-AUC 0.9986 vs 0.9274 = +7.1pp. TraceCore is fraction-robust (F1/PR essentially same at frac=0.2 vs frac=1.0). CPU-only (LightGBM 30sec) vs GraphIDS 69min GPU."
+  },
+  {
+    "ts": "20260518_1825",
+    "tag": "graphids_official_unsw",
+    "category": "baseline",
+    "status": "BASELINE",
+    "metrics": {
+      "F1_macro": 0.9262,
+      "PR_AUC": 0.7579,
+      "AP": 0.7579,
+      "peak_gpu_mb": 946.85,
+      "inference_sec": 0.84,
+      "n_flows": 2390275,
+      "fraction": 0.2
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_1825_graphids_official_unsw",
+    "note": "HEAD-TO-HEAD: TraceCore+Flow+LightGBM F1=0.9635 PR=0.9911 vs GraphIDS F1=0.9262 PR=0.7579 \u2192 TraceCore wins +3.7pp F1 / +23.3pp PR-AUC (huge gap, due to UNSW low attack rate 3.98pct hurting GraphIDS)."
+  },
+  {
+    "ts": "20260518_1826",
+    "tag": "supervised_unsw_frac0p2",
+    "category": "main",
+    "status": "BREAKTHROUGH",
+    "metrics": {
+      "F1": 0.963,
+      "PR_AUC": 0.9901,
+      "ROC_AUC": 0.9997,
+      "R_FP_1e-4": 0.5112,
+      "R_FP_1e-3": 0.8831,
+      "R_FP_1e-2": 1.0,
+      "tc_only_F1": 0.9095,
+      "tc_only_PR": 0.8659,
+      "flow_only_F1": 0.9497,
+      "flow_only_PR": 0.986,
+      "fraction": 0.2
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_1826_supervised_unsw_frac0p2",
+    "note": "APPLES-TO-APPLES vs GraphIDS NeurIPS25 on UNSW (both fraction=0.2): TraceCore F1 0.9630 vs GraphIDS 0.9262 = +3.7pp; PR-AUC 0.9901 vs 0.7579 = +23.2pp DECISIVE. R@FP=1e-2 = 1.0 (perfect catch at 1pct FP)."
+  },
+  {
+    "ts": "20260518_1833",
+    "tag": "lanl_role_residual",
+    "category": "main",
+    "status": "BREAKTHROUGH",
+    "metrics": {
+      "n_hosts": 11911,
+      "n_roles": 16,
+      "n_positives": 164,
+      "n_negatives": 13644891,
+      "raw_lsf72_AP": 0.0002,
+      "raw_lsf72_R_1e-3": 0.0,
+      "raw_lsf72_R_1e-2": 0.226,
+      "rf12_z_AP": 0.2329,
+      "rf12_z_R_1e-3": 0.646,
+      "rf72_z_AP": 0.3329,
+      "rf72_z_R_1e-3": 0.713,
+      "rf72_z_R_1e-2": 0.848,
+      "rf72_z_R_5e-2": 0.902,
+      "rf288_z_AP": 0.1138,
+      "rf288_z_R_1e-3": 0.787,
+      "rf288_z_R_1e-2": 0.884,
+      "residual_lsf72_AP": 0.1926,
+      "residual_lsf72_R_5e-2": 0.915
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_1833_lanl_role_residual",
+    "note": "BIG WIN: R@FP=1e-3 went from 0pct (raw) to 78.7pct (rf288 residual); R@FP=1e-2 from 22.6pct to 88.4pct; AP from ~0 to 0.333 (rf72 residual). Validates FINAL_PROPOSAL \u00a74 role-conditioned residual scoring approach. Best single score: rolling_fanout_72_z (6h window with role-conditioning)."
+  },
+  {
+    "ts": "20260518_1945",
+    "tag": "per_attack_class_toniot",
+    "category": "main",
+    "status": "BREAKTHROUGH",
+    "metrics": {
+      "scanning_TC_FP1pct": 0.9567,
+      "scanning_flow_FP1pct": 0.8249,
+      "mitm_TC_FP1pct": 0.9859,
+      "mitm_flow_FP1pct": 0.6317,
+      "ransomware_TC_FP1pct": 0.9909,
+      "ransomware_flow_FP1pct": 0.6722,
+      "xss_TC_FP0p1pct": 0.9277,
+      "xss_flow_FP0p1pct": 0.5566,
+      "mitm_TC_FP0p1pct": 0.8898,
+      "mitm_flow_FP0p1pct": 0.3972
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_1945_per_attack_class_toniot",
+    "note": "Per-class FP=1pct: TraceCore +13.2pp on scanning, +35.4pp on mitm, +31.9pp on ransomware vs Flow-only. At strict FP=0.1pct: +49.3pp on mitm, +40.1pp on password, +37.1pp on xss. Confirms TraceCore advantage is strongest on coordination-heavy classes."
+  },
+  {
+    "ts": "20260518_1945",
+    "tag": "block3_storage_lanl",
+    "category": "main",
+    "status": "BREAKTHROUGH",
+    "metrics": {
+      "n_epochs": 8024,
+      "n_unique_hosts": 11911,
+      "n_host_epoch_cells": 13645055,
+      "n_deltas": 9402454,
+      "deltas_pct": 68.907,
+      "naive_uncompressed_mb": 169.33,
+      "naive_gzipped_mb": 34.69,
+      "coredelta_uncompressed_mb": 149.86,
+      "coredelta_gzipped_mb": 30.83,
+      "shellindex_varint_mb": 14.72,
+      "shellindex_varint_gzipped_mb": 9.04,
+      "shellindex_vs_naive": 11.5,
+      "shellindex_gz_vs_naive": 18.73
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_1945_block3_storage_lanl",
+    "note": "Headline: ShellIndex varint+gzip is 18.73x smaller than naive snapshot uncompressed (or 3.84x smaller than naive gzipped). CoreDelta gzipped: 5.49x vs naive. Confirms TraceCores storage claim in paper."
+  },
+  {
+    "ts": "20260518_1957",
+    "tag": "anomale_NF-CSE-CIC-IDS2018-v2",
+    "category": "baseline",
+    "status": "OK",
+    "metrics": {
+      "roc_auc": 0.9848,
+      "pr_auc": 0.9584,
+      "best_f1": 0.9352,
+      "recall_at_fp_0.001": 0.883,
+      "recall_at_fp_0.01": 0.8853,
+      "n_train_edges": 15074866,
+      "n_test_edges": 3768716,
+      "dgi_subsample_edges": 4000000
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_1957_anomale_NF-CSE-CIC-IDS2018-v2",
+    "note": "Anomal-E reimplementation (paper-faithful: E-GraphSAGE encoder + DGI self-supervised + IF on benign). Subsampled DGI training to 4M edges due to 24GB GPU memory cap; full graph used for embedding extraction. Beat by our supervised TraceCore+LGB and supervised GraphIDS, expected since Anomal-E is unsupervised."
+  },
+  {
+    "ts": "20260518_2015",
+    "tag": "graphids_official_toniot_frac0.2",
+    "category": "baseline",
+    "status": "OK",
+    "metrics": {
+      "final_test_pr_auc": 0.80553,
+      "final_test_f1": 0.68036,
+      "final_test_ap": 0.80553,
+      "test_threshold": 0.00405,
+      "peak_gpu_memory_mb": 539.18,
+      "test_prediction_time_sec": 1.81,
+      "val_pr_auc": 0.79195,
+      "val_loss": 0.00517,
+      "train_loss": 0.00116,
+      "n_epochs": 100
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_2015_graphids_official_toniot_frac0_2",
+    "note": "GraphIDS (NeurIPS 25) F1 0.6804 / PR-AUC 0.8056 on NF-ToN-IoT-v2 vs TraceCore+LGB F1 0.9895 / PR-AUC 0.9985. Need to re-run TraceCore at fraction=0.2 for apples-to-apples."
+  },
+  {
+    "ts": "20260518_2018",
+    "tag": "supervised_toniot_frac0.2",
+    "category": "main",
+    "status": "OK",
+    "metrics": {
+      "tc_plus_flow_f1": 0.9895,
+      "tc_plus_flow_pr": 0.9985,
+      "tc_plus_flow_roc": 0.997,
+      "tc_plus_flow_R_FP_1e-3": 0.9167,
+      "tc_plus_flow_R_FP_1e-2": 0.9842,
+      "flow_only_f1": 0.9634,
+      "flow_only_pr": 0.9859,
+      "flow_only_R_FP_1e-3": 0.4628,
+      "tc_only_f1": 0.9039,
+      "tc_only_pr": 0.9677,
+      "fraction": 0.2
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260518_2018_supervised_toniot_frac0_2",
+    "note": "Apples-to-apples vs GraphIDS-ToN-IoT (F1=0.6804/PR-AUC=0.8055): TraceCore+LGB +30.9pp F1 and +19.3pp PR-AUC at 73x lower training cost (40s CPU vs 49min GPU)."
+  },
+  {
+    "ts": "20260606_0243",
+    "tag": "block1_stage3_oracle",
+    "category": "main",
+    "status": "OK",
+    "metrics": {
+      "ascent_checks": 200,
+      "ascent_mismatches": 0,
+      "outlier_checks": 132,
+      "outlier_mismatches": 0,
+      "n_windows": 20,
+      "n_epochs_sampled": 50
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260606_0243_block1_stage3_oracle",
+    "note": "R1-M1 fix: extends Block-1 gate to all six primitives. coreness_ascent vs igraph per-epoch recompute on 20 1-hour windows x 5 hosts x 2 (delta,p) configs; residual_outliers polars pipeline vs independent brute-force z-scores on 50 epochs x z0 in {2,3,4}."
+  },
+  {
+    "ts": "20260606_0250",
+    "tag": "role_residual_r1_sweeps",
+    "category": "ablation",
+    "status": "OK",
+    "metrics": {
+      "k12_rf288z_R1e3": 0.787,
+      "k16_rf288z_R1e3": 0.768,
+      "k64_rf288z_R1e3": 0.579,
+      "ewma_hl72_fullroles_rf288z_R1e3": 0.768,
+      "ewma_hl72_fullroles_rf288z_R1e2": 0.884,
+      "inwindow_prefix_epochs": 2
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260606_0250_role_residual_r1_sweeps",
+    "note": "R1-M4: K in 4..32 plateau (R@1e-3 0.756-0.787), collapse at K=64; causal EWMA with full roles matches instantaneous stats; in-window past-only infeasible (first attack at epoch 502 vs window start 500 = 10min prefix) -> corrected experiment uses pre-campaign epochs 0-499 (role_residual_r2). Re-run base K=16 differs from original ledger entry by ~2pp R@1e-3 due to polars group-by row-order nondeterminism feeding MiniBatchKMeans; r2 sorts hosts before fit."
+  },
+  {
+    "ts": "20260606_0307",
+    "tag": "role_residual_r2_deployable",
+    "category": "ablation",
+    "status": "OK",
+    "metrics": {
+      "benign_prefix_rf288z_R1e3": 0.378,
+      "benign_prefix_rf288z_R1e2": 0.72,
+      "weekly_refit_rf288z_R1e3": 0.61,
+      "weekly_refit_rf288z_R1e2": 0.774,
+      "weekly_refit_rf288z_R1e4": 0.384,
+      "prefix_hosts": 9494,
+      "prefix_epochs": 500
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260606_0307_role_residual_r2_deployable",
+    "note": "R1-M4 corrected: cohort stats causal in all variants; role labels from (i) frozen 500-epoch pre-campaign prefix (9494/11911 hosts seen) or (ii) weekly refit on all data < boundary. Hosts sorted before k-means for determinism. Headline retrospective roles: 0.787/0.884 (original ledger)."
+  },
+  {
+    "ts": "20260606_0510",
+    "tag": "protocol_variants_nfuq",
+    "category": "ablation",
+    "status": "OK",
+    "metrics": {
+      "cic_standard_R1e3": 0.9697,
+      "cic_transductive_R1e3": 0.9698,
+      "cic_hostgroup_R1e3": 0.9045,
+      "cic_hostgroup_F1at05": 0.2553,
+      "ton_hostgroup_ROC": 0.2318,
+      "unsw_hostgroup_F1": 0.9579,
+      "cic_pct_test_flows_both_in_train": 98.22
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260606_0510_protocol_variants_nfuq",
+    "note": "R1-C2: transductive vs train-only differ by <=0.1pp everywhere (paper protocol loses nothing by being inductive). Host-group generalization is dataset-dependent: CIC ranking transfers (R@1e-3 0.9045) but 0.5-threshold F1 collapses (calibration shift on unseen hosts); ToN collapses entirely (946 attack-source hosts held out, ROC 0.23); UNSW fine (only 42 hosts)."
+  },
+  {
+    "ts": "20260606_0510",
+    "tag": "streaming_systems_bench",
+    "category": "main",
+    "status": "OK",
+    "metrics": {
+      "w300_query_load_wall_sec": 4245.4,
+      "w300_flows_per_sec": 26701,
+      "w300_q_n": 270627,
+      "w300_q_p50_us": 2.34,
+      "w300_q_p99_us": 14.31,
+      "w60_wall_sec": 4563.7,
+      "w60_pkl_mb": 355.1,
+      "w60_peak_rss_mb": 4043,
+      "w900_wall_sec": 292.4,
+      "w900_flows_per_sec": 387878,
+      "w900_pkl_mb": 64.5,
+      "flow_rows_28d": 113420124
+    },
+    "dir": "/private/workspace/icde_flow/results/runs/20260606_0510_streaming_systems_bench",
+    "note": "R1-M5. W300 run includes concurrent point-query client (270K queries; client snapshots epoch list per query, inflating build wall vs bare 1884s original) + per-epoch instrumentation. Query latency under ingest stays p50 2.34us / p99 14.31us. W sensitivity without query load: 900s->292s wall (388K flows/s, 64.5MB pkl), 60s->4564s (355MB pkl, 4.0GB peak RSS); per-epoch scan overhead dominates at fine granularity."
+  }
+]

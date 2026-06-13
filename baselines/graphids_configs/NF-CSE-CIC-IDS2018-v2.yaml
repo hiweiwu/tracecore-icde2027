@@ -1,0 +1,42 @@
+data_type:
+  value: benign
+dataset:
+  value: NF-CSE-CIC-IDS2018-v2
+num_epochs:
+  value: 100
+learning_rate:
+  value: 7.423525164428174e-5
+weight_decay:
+  value: 0.6
+ae_weight_decay:
+  value: 0.011263928281120002
+edim_out:
+  value: 64
+batch_size:
+  value: 16384
+fanout:
+  value: 32768
+agg_type:
+  value: mean
+num_layers:
+  value: 1
+mask_ratio:
+  value: 0.15
+patience:
+  value: 20
+ae_batch_size:
+  value: 64
+window_size:
+  value: 512
+step_percent:
+  value: 1.0
+ae_embedding_dim:
+  value: 32
+ae_dropout:
+  value: 0.2
+dropout:
+  value: 0.5
+positional_encoding:
+  value: None
+fraction:
+  value: 0.2

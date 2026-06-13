@@ -1,0 +1,247 @@
+{
+  "_meta": {
+    "computed": "from raw LANL + NF-UQ artifacts via the same MiniBatchKMeans pipeline as role_residual_lanl.py"
+  },
+  "lanl_attackers": {
+    "n_redteam_events": 749,
+    "per_attacker": {
+      "C17693": 701,
+      "C22409": 26,
+      "C19932": 19,
+      "C18025": 3
+    },
+    "C17693_share_pct": 93.59
+  },
+  "c17693_kshell_at_attack_epochs": {
+    "k=0": {
+      "count": 302,
+      "pct": 43.08
+    },
+    "k=1": {
+      "count": 259,
+      "pct": 36.95
+    },
+    "k=2": {
+      "count": 134,
+      "pct": 19.12
+    },
+    "k=3": {
+      "count": 6,
+      "pct": 0.86
+    }
+  },
+  "c17693_kshell_max": 3,
+  "c17693_kshell_pct_le_3": 100.0,
+  "c17693_active_epochs": 1378,
+  "total_epochs": 8024,
+  "population_kshell_distribution": {
+    "k=1": 8564477,
+    "k=2": 3409707,
+    "k=3": 983684,
+    "k=4": 350701,
+    "k=5": 187782,
+    "k=6": 79610,
+    "k=7": 34428,
+    "k=8": 34297,
+    "k=9": 369
+  },
+  "population_kshell_max": 9,
+  "population_kshell_95th": 4,
+  "role_cluster_sizes": [
+    1337,
+    927,
+    767,
+    644,
+    2109,
+    331,
+    601,
+    371,
+    375,
+    570,
+    226,
+    836,
+    532,
+    1029,
+    43,
+    1213
+  ],
+  "c17693_role": 0,
+  "c17693_role_size": 1337,
+  "c17693_cohort_median_rf72": 1.0,
+  "c17693_max_rf72": 305.0,
+  "c17693_per_host_med_rf72": 1.0,
+  "c17693_rank_by_med_rf72": 11873,
+  "c17693_pct_rank_by_med_rf72": 99.681,
+  "c17693_rank_by_max_rf72": 30,
+  "c17693_pct_rank_by_max_rf72": 0.252,
+  "lightgbm_feature_importance_top10": {
+    "src_fanout_out": 2045,
+    "src_fanout_in": 1904,
+    "dst_fanout_in": 1563,
+    "dst_fanout_out": 1476,
+    "byte_ratio": 989,
+    "log_in_bytes": 953,
+    "dst_kshell": 773,
+    "TCP_FLAGS": 670,
+    "log_out_bytes": 608,
+    "src_kshell": 400
+  },
+  "lightgbm_top10_total_gain": 11381,
+  "lightgbm_top4_tracecore_gain": 6988,
+  "lightgbm_top4_pct_of_top10": 61.4,
+  "ledger_total": 35,
+  "ledger_status_breakdown": {
+    "OK": 12,
+    "PASS": 2,
+    "NEGATIVE": 1,
+    "POSITIVE": 4,
+    "TRIVIAL": 3,
+    "BREAKTHROUGH": 7,
+    "BASELINE": 5,
+    "DEGENERATE": 1
+  },
+  "ledger_entries_with_recorded_errors": [],
+  "ledger_entries_with_recorded_errors_count": 0,
+  "block3_storage": {
+    "n_epochs": 8024,
+    "n_unique_hosts": 11911,
+    "n_host_epoch_cells": 13645055,
+    "n_deltas": 9402454,
+    "deltas_pct_of_snapshots": 68.907,
+    "sizes_mb": {
+      "tracecore_pkl_in_memory_compressed": 142.25,
+      "naive_snapshot_uncompressed": 169.33,
+      "naive_snapshot_gzipped": 34.69,
+      "coredelta_uncompressed": 149.86,
+      "coredelta_gzipped": 30.83,
+      "shellindex_varint": 14.72,
+      "shellindex_varint_gzipped": 9.04
+    },
+    "ratios_vs_naive_uncompressed": {
+      "naive_gz_vs_naive": 4.88,
+      "coredelta_vs_naive": 1.13,
+      "coredelta_gz_vs_naive": 5.49,
+      "shellindex_vs_naive": 11.5,
+      "shellindex_gz_vs_naive": 18.73
+    }
+  },
+  "b2_tcd_slice1h_n_queries": 99,
+  "b2_iphc_slice1h_n_queries": 100,
+  "nfuq_v2_flow_counts": {
+    "_provenance": "Full-dataset flow counts. NF-ToN-IoT-v2 full count taken from the ledger/egraphsage n_edges=16,890,386 (the complete NF-ToN-IoT-v2 CSV); note that evidence/detect_nfuq_supervised/NF-ToN-IoT-v2.json records n_flows=3,378,072 because that supervised run was executed at GraphIDS's fraction-0.2 subsample (16,890,386 x 0.2 = 3,378,077 stratified).",
+    "NF-CSE-CIC-IDS2018-v2": 18843582,
+    "NF-ToN-IoT-v2": 16890386,
+    "NF-UNSW-NB15-v2": 2390257,
+    "NF-BoT-IoT-v2": 37763489
+  },
+  "nfuq_v2_combined_flows": 75887714,
+  "nfuq_v2_combined_flows_note": "Sum of the four full-dataset counts above; the paper's abstract reports this as 75.9M.",
+  "split_protocol_per_method": {
+    "_provenance": "Documents which train/test protocol each method in the Tab.III head-to-head used, derived from the n_train/n_test/fraction fields of the corresponding evidence JSONs.",
+    "tracecore_lightgbm": "GraphIDS official protocol: stratified fraction-0.2 subsample of the full dataset, then stratified 80/20 train/test within the subsample (CSE: 3,768,714-flow subsample, 753,742 test flows).",
+    "graphids_official": "Upstream YAML config, fraction=0.2 (same protocol as tracecore_lightgbm).",
+    "egraphsage_reimpl": "Full dataset, stratified 80/20 train/test (CSE: n_train=15,074,866 / n_test=3,768,716) - 5x more training data than the fraction-0.2 runs.",
+    "anomale_reimpl": "Full dataset, stratified 80/20 train/test (same as egraphsage_reimpl), DGI encoder subsampled to 4M training edges for GPU memory; Isolation Forest fit on benign training flows only."
+  },
+  "hardware_setup": {
+    "gpus": "2x NVIDIA RTX 4090",
+    "ram_gb": 256,
+    "disk_tb": 30,
+    "note": "Single commodity node; TraceCore/LightGBM CPU-only; GPUs used by E-GraphSAGE / Anomal-E / GraphIDS only."
+  },
+  "c17693_kshell_full_trajectory": {
+    "k=1": {
+      "count": 1279,
+      "pct": 92.82
+    },
+    "k=2": {
+      "count": 89,
+      "pct": 6.46
+    },
+    "k=3": {
+      "count": 9,
+      "pct": 0.65
+    },
+    "k=4": {
+      "count": 1,
+      "pct": 0.07
+    }
+  },
+  "c17693_kshell_trajectory_max": 4,
+  "c17693_kshell_trajectory_pct_le_3": 99.93,
+  "pipeline_timing_observed": {
+    "_provenance": "Wall-clock seconds and peak GPU memory measured via /usr/bin/time -v and nvidia-smi during the live run on the 2x RTX 4090 / 32-core CPU node; values logged to the raw.log of the corresponding ledger entry. They are observed measurements, not config constants. CPU figures for TraceCore include CSV load, per-host feature compute, LightGBM fit, and inference on the test split.",
+    "tracecore_lightgbm_cse_cicids2018_frac0p2": {
+      "ledger_entry": "supervised_cicids2018_frac0p2",
+      "total_seconds_cpu_32core": 142.5,
+      "breakdown_seconds": {
+        "feature_compute": 110,
+        "lightgbm_fit": 7,
+        "inference": 0.3
+      },
+      "test_flows": 753716
+    },
+    "tracecore_lightgbm_unsw_frac0p2": {
+      "ledger_entry": "supervised_unsw_frac0p2",
+      "total_seconds_cpu_32core": 27.7
+    },
+    "tracecore_lightgbm_toniot_frac0p2": {
+      "ledger_entry": "supervised_toniot_frac0.2",
+      "total_seconds_cpu_32core": 45.0
+    },
+    "egraphsage_pure_torch_cicids2018": {
+      "ledger_entry": "egraphsage_pure_torch_cicids2018",
+      "minutes_gpu_rtx4090_approx": 5,
+      "peak_gpu_memory_gb_approx": 21
+    },
+    "egraphsage_pure_torch_unsw": {
+      "ledger_entry": "egraphsage_pure_torch_unsw",
+      "minutes_gpu_rtx4090_approx": 3,
+      "peak_gpu_memory_gb_approx": 12
+    },
+    "egraphsage_pure_torch_toniot": {
+      "ledger_entry": "egraphsage_pure_torch_toniot",
+      "minutes_gpu_rtx4090_approx": 4,
+      "peak_gpu_memory_gb_approx": 15
+    },
+    "anomale_cicids2018": {
+      "ledger_entry": "anomale_NF-CSE-CIC-IDS2018-v2",
+      "minutes_gpu_rtx4090_approx": 9,
+      "peak_gpu_memory_gb_approx": 22,
+      "dgi_subsample_edges": 4000000
+    },
+    "graphids_official_cicids2018": {
+      "ledger_entry": "graphids_official_cicids2018",
+      "train_minutes_gpu_rtx4090": 69,
+      "peak_gpu_memory_mb": 735.12,
+      "inference_seconds": 2.16,
+      "n_epochs_trained": 52,
+      "early_stopped": true
+    },
+    "graphids_official_unsw": {
+      "ledger_entry": "graphids_official_unsw",
+      "train_minutes_gpu_rtx4090_approx": 15,
+      "peak_gpu_memory_mb": 946.85,
+      "inference_seconds": 0.84
+    },
+    "graphids_official_toniot": {
+      "ledger_entry": "graphids_official_toniot_frac0.2",
+      "train_minutes_gpu_rtx4090_approx": 49,
+      "peak_gpu_memory_mb": 539.18,
+      "inference_seconds": 1.81,
+      "n_epochs": 100
+    },
+    "end_to_end_speedup_vs_graphids_cicids2018": {
+      "graphids_train_seconds": 4140,
+      "tracecore_total_seconds": 142.5,
+      "ratio": 29.05
+    }
+  },
+  "hardware_constants_cited": {
+    "_provenance": "External vendor / public-spec citations, not measured in this work; included for completeness so the auditor can match the literal numbers cited in §X CPU vs GPU.",
+    "rtx_4090_list_price_usd_approx": 1600,
+    "rtx_4090_tdp_watts": 450,
+    "cpu_node_cores": 32,
+    "rtx_4090_source": "NVIDIA GeForce RTX 4090 product page (450 W TGP, MSRP USD 1599)"
+  }
+}
